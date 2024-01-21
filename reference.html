@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>나의 블로그</title>
+    <style>
+        /* 이전에 정의한 CSS에 추가됩니다. */
+        
+        /* 탭 메뉴 스타일 */
+        .tab {
+            overflow: hidden;
+            background-color: #343a40;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+            color: #fff;
+        }
+
+        .tab button:hover {
+            background-color: #6c757d;
+        }
+
+        .tab button.active {
+            background-color: #6c757d;
+        }
+
+        /* 탭 콘텐츠 스타일 */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border-top: none;
+        }
+        
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .date {
+            text-align: right;
+            color: #A6A6A6;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 600px) {
+            .tab button {
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+
+    <script>
+        function openPage(pageName, elmnt) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = "#6c757d";
+        }
+    </script>
+</head>
+<body>
+    <!-- 탭 메뉴 추가 -->
+    <div class="tab">
+        <button class="tablink" onclick="openPage('R', this)" id="defaultOpen">라디오</button>
+        <button class="tablink" onclick="openPage('TV', this)">TV자료</button>
+        <button class="tablink" onclick="openPage('V', this)">영상자료</button>
+    </div>
+
+    <!-- 탭 콘텐츠 추가 -->
+    <div id="R" class="tabcontent">
+        <h2>라디오자료</h2>
+        <p>이곳에는 라디오 자료들이 올라옵니다.</p>
+    </div>
+
+    <div id="TV" class="tabcontent">
+        <h2>TV자료</h2>
+        <p>이곳에는 TV 자료들이 올라옵니다.</p>
+    </div>
+
+    <div id="V" class="tabcontent">
+        <h2>영상자료</h2>
+        <p>이곳에는 여러 영상자료들이 올라옵니다.</p>
+    </div>
+
+    <script>
+        // 기본적으로 첫 번째 탭을 엽니다.
+        document.getElementById("defaultOpen").click();
+    </script>
+
+    <!-- 이전에 정의한 나머지 HTML 코드 -->
+</body>
+</html>
