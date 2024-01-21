@@ -65,7 +65,11 @@
                 tablinks[i].style.backgroundColor = "";
             }
             document.getElementById(pageName).style.display = "block";
-            elmnt.style.backgroundColor = "#6c757d";
+            elmnt.style.backgroundColor = "#6c757d";var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windowssce|palm/i.test(navigator.userAgent.toLowerCase()));
+
+if (mobile) {
+    window.location.href = "/mindex.html";
+}
         }
     </script>
 </head>
