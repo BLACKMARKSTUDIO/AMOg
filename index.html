@@ -5,7 +5,7 @@
     <title>나의 블로그</title>
     <style>
         /* 이전에 정의한 CSS에 추가됩니다. */
-
+        @font-face { font-family: 'JalnanGothic'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff') format('woff'); font-weight: normal; font-style: normal; }
         /* 탭 메뉴 스타일 */
         .tab {
             overflow: hidden;
@@ -79,7 +79,7 @@ if (mobile) {
     <div class="tab">
         <button class="tablink" onclick="openPage('Home', this)" id="defaultOpen">홈</button>
         <button class="tablink" onclick="openPage('Blog', this)">블로그</button>
-        <button class="tablink" onclick="openPage('About', this)">자료실</button>
+        <button class="tablink" onclick="openPage('About', this)"><a href="https://blackmarkstudio.github.io/AMOg/reference.html">자료실</a></button>
     </div>
 
     <!-- 탭 콘텐츠 추가 -->
